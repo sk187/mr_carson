@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    $(window).load(function(){
+    $('#sex').modal({keyboard: false, backdrop: 'static'});
+    $('#sex').modal('show');
+  });
+</script>
+<div>
+    <div id='sex' class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Welcome To The Aquatic Oasis</h4>
+          </div>
+
+          <div class="modal-body">
+            <div>
+                <img src='/assets/carson.jpg'>
+            </div>
+
+            <div>
+                <p> Please forgive your Grace, but by what salutation shall I 
+                address you? </p>
+                <%form_tag( users_path, method: 'patch' ), do |f|%>
+                <%= f.radio_button_tag(:sex, "Lord") %>
+                <%= label_tag(:sex_male, "Lord") %>
+                <%= radio_button_tag(:sex, "Lady") %>
+                <%= label_tag(:sex_female, "Lady") %>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+          </div>
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>

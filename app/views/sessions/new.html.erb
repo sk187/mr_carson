@@ -8,18 +8,24 @@
             <%= flash[:error] %>
           </div>
         <% end %>
+        
+        <% if flash[:notice] %>
+          <div class="alert alert-info">
+            <%= flash[:notice] %>
+          </div> 
+        <% end %> 
       </div>
 
       <div class="modal-body">
         <img src='/assets/carson.jpg'>
-
+        <blockquote>"Please enter your Confirmation Code"</blockquote>
         <%= form_tag '/login' do %>
-            <%= label_tag :confirm_code, "Confirmation Code" %>
-            <%= text_field_tag :confirm_code, params[:confirm_code], placeholder: "EX: 32BTCD"%>       
+          <%= label_tag :confirm_code, "Confirmation Code" %>
+          <%= text_field_tag :confirm_code, params[:confirm_code], placeholder: "EX: 32BTCD"%>
       </div>
 
       <div class="modal-footer">
-            <%= submit_tag('Submit', class: "btn btn-success")%>
+          <%= submit_tag('Submit', class: "btn btn-success")%>
         <%end%>
       </div>
 
@@ -35,8 +41,3 @@
       });
 </script>
 
-<% if flash[:notice] %>
-  <div class="alert alert-info">
-    <%= flash[:notice] %>
-  </div> 
-<% end %> 

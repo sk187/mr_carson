@@ -9,7 +9,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+    <% if current_user %>
+    <ul class="nav nav-pills">
+      <li class=" <%= 'active' if current_page?(homes_path)%>"><%= link_to "Home", homes_path %></li>
+      <li class=" <%= 'active' if current_page?(food_path)%>"><%= link_to "Food", food_path %></li>
+      <li class=" <%= 'active' if current_page?(sights_path)%>"><%= link_to "Sights", sights_path %></li>
+      <li class=" <%= 'active' if current_page?(manor_guide_path)%>"><%= link_to "Manor Guide", manor_guide_path %></li>
+      <li><%= link_to "Log Out", logout_path %></li>
+    </ul>
+    <%end%>
 <%= yield %>
 
 </body>
