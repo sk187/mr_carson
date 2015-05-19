@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+  <div class="alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if logged_in? %>
+  <li> Hi <%= current_user.first_name %>
+  <li><%= link_to 'Log Out', logout_path%></li>
+<%else%>
+  <li><%= link_to 'Log In', root_path%></li>
+<% end %>

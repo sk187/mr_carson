@@ -1,0 +1,39 @@
+<script type="text/javascript"> 
+    $(window).load(function(){
+        $('#signIn').modal({keyboard: false, backdrop: 'static'});
+        $('#signIn').modal('show');
+      });
+</script>
+
+<div id='signIn' class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Authentication</h4>
+        <% if flash[:error] %>
+          <div class="alert alert-danger">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="modal-body">
+        <img src='/assets/carson.jpg'>
+
+        <%= form_tag '/login' do %>
+            <%= label_tag :confirm_code, "Confirmation Code" %>
+            <%= text_field_tag :confirm_code, params[:confirm_code], placeholder: "EX: 32BTCD"%>       
+      </div>
+
+      <div class="modal-footer">
+            <% if logged_in?%>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%else%>
+              <%= submit_tag('Submit', class: "btn btn-success")%>
+            <% end %>
+        <%end%>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
