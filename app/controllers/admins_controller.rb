@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
         @admin = Admin.new(admin_params)
         if @admin.save
             session[:admin_id] = @admin.id
-            flash[:notice] = "I knight thee"
+            flash[:notice] = "Welcome to the Aquatic Oasis Milord"
             redirect_to admins_path
         else
             if params[:admin][:username].length == 0

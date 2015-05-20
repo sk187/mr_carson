@@ -1,4 +1,4 @@
-<div id='admin_create' class="modal fade">
+<div id='admin_login' class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -18,18 +18,15 @@
 
       <div class="modal-body">
         <img src='/assets/carson.jpg'>
-        <%= form_for @admin do |f| %>
-          <%= f.label :username, "Username" %>
-          <%= f.text_field :username, placeholder: "Übermensch"%>
-          <%= f.label :password, "Password" %>
-          <%= f.password_field :password, placeholder: "Votre Mot de Passe"%>
-          <%= f.label :password_confirmation, "Confirm Password" %>
-          <%= f.password_field :password_confirmation, placeholder: "
-          "%>
+        <%= form_tag '/login_admin' do%>
+          <%= label_tag :username, "Username" %>
+          <%= text_field_tag :username, nil, placeholder: "Übermensch"%>
+          <%= label_tag :password, "Password" %>
+          <%= password_field_tag :password, nil, placeholder: "Votre Mot de Passe"%>
       </div>
 
       <div class="modal-footer">
-          <%= f.submit('Create', class: "btn btn-success")%>
+          <%= submit_tag('Login', class: "btn btn-success")%>
         <%end%>
       </div>
 
@@ -40,7 +37,7 @@
 
 <script type="text/javascript"> 
     $(window).load(function(){
-        $('#admin_create').modal({keyboard: false, backdrop: 'static'});
-        $('#admin_create').modal('show');
+        $('#admin_login').modal({keyboard: false, backdrop: 'static'});
+        $('#admin_login').modal('show');
       });
 </script>

@@ -1,7 +1,4 @@
-index.html.erb
-
-<%= link_to "Create Admin", new_admin_path%> 
-
+admin/index.html.erb
 <% if flash[:error] %>
   <div class="alert alert-danger">
     <%= flash[:error] %>
@@ -13,3 +10,7 @@ index.html.erb
     <%= flash[:notice] %>
   </div> 
 <% end %> 
+
+<%= link_to "Create Admin", new_admin_path%> 
+<%= link_to "Admin Login", login_admin_path%>
+<%= link_to "Log Out", logout_admin_path%>
