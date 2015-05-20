@@ -1,0 +1,46 @@
+<div id='admin_panel' class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">New Admin Form</h4>
+        <% if flash[:error] %>
+          <div class="alert alert-danger">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+        
+        <% if flash[:notice] %>
+          <div class="alert alert-info">
+            <%= flash[:notice] %>
+          </div> 
+        <% end %> 
+      </div>
+
+      <div class="modal-body">
+        <img src='/assets/carson.jpg'>
+        <%= form_for @admin do |f| %>
+          <%= f.label :username, "Username" %>
+          <%= f.text_field :username, placeholder: "Übermensch"%>
+          <%= f.label :password, "Password" %>
+          <%= f.password_field :password, placeholder: "Votre Mot de Passe"%>
+          <%= f.label :password_confirmation, "Confirm Password" %>
+          <%= f.password_field :password_confirmation, placeholder: "
+          "%>
+      </div>
+
+      <div class="modal-footer">
+          <%= f.submit('Create', class: "btn btn-success")%>
+        <%end%>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript"> 
+    $(window).load(function(){
+        $('#admin_panel').modal({keyboard: false, backdrop: 'static'});
+        $('#admin_panel').modal('show');
+      });
+</script>

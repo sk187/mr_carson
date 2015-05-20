@@ -11,4 +11,7 @@ Rails.application.routes.draw do
     get :sights
     get :manor_guide
   end
+  get '/admin', to: 'admins#index'
+  resources :control_panel
+  resources :admins
 end
