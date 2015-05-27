@@ -4,13 +4,13 @@
   <title>MrCarson</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"> </script> <!-- Don't need?  -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> Installed Bootstrap Gem-->
   <%= csrf_meta_tags %>
 </head>
 <body>
     <% if current_user %>
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills navbar-fixed">
       <li class=" <%= 'active' if current_page?(homes_path)%>"><%= link_to "Home", homes_path %></li>
       <li class=" <%= 'active' if current_page?(food_path)%>"><%= link_to "Food", food_path %></li>
       <li class=" <%= 'active' if current_page?(sights_path)%>"><%= link_to "Sights", sights_path %></li>

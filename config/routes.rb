@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get :sights
     get :manor_guide
   end
+  
   get '/admin', to: 'admins#index'
   get '/login_admin', to: 'admin_sessions#new'
   post '/login_admin', to: 'admin_sessions#create'
