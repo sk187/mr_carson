@@ -21,7 +21,7 @@
         <blockquote>"Please enter your Confirmation Code"</blockquote>
         <%= form_tag '/login' do %>
           <%= label_tag :confirm_code, "Confirmation Code" %>
-          <%= text_field_tag :confirm_code, params[:confirm_code], placeholder: "EX: 32BTCD"%>
+          <%= text_field_tag :confirm_code, params[:confirm_code], placeholder: "Example: 32BTCD"%>
       </div>
 
       <div class="modal-footer">

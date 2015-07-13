@@ -1,5 +1,8 @@
 class AdminsController < ApplicationController
+    before_action :admin_authorize
+
     def index
+        # raise
     end
 
     def create
